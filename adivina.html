@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+    
+<input type="text">
+<button>Hacer click aqui</button>
+
+
+
+<script>
+
+let secreto = Math.round(Math.random()*10);
+let entrada  = document.querySelector("input")
+entrada.focus()
+
+function verificar(){
+
+if (parseInt(entrada.value)  === secreto){
+    alert("Ud Acerto")
+}else{
+    alert("Ud no adivino")
+}
+    entrada.value = ""
+    entrada.focus()
+}
+
+let button = document.querySelector("button")
+button.onclick = verificar
+
+
+
+
+
+</script>
+
+</body>
+</html>
