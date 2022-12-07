@@ -17,7 +17,9 @@
 
     </canvas>
 
+    <canvas width="800" height="600" id="square">
 
+    </canvas>
 
     <script>
         document.write("<h1>HOLA</h1>")
@@ -61,9 +63,48 @@
         cuadradoverde(55,55, "gray") 
         cuadradoverde(110,55, "green")
         
+        let screen = document.querySelector("#square")
+        let pencil = screen.getContext("2d")
+
+        pencil.fillStyle = "blue"
+        pencil.fillRect(0,0,600,400)        
         
-        
-        
+        function alerta(event){
+            let x = event.pageX - screen.offsetLeft
+            let y = event.pageY - screen.offsetTop
+            console.log(event)
+            alert(`${x} , ${y}`)
+        }
+
+        function circulo(event){
+            let x = event.pageX - screen.offsetLeft
+            let y = event.pageY - screen.offsetTop
+           
+            pencil.fillStyle = "orange"
+            pencil.beginPath()
+            pencil.arc(x,y,10,0,2*3.14)
+            pencil.fill()
+            console.log(`${x} , ${y}`)
+        }
+
+
+        screen.onclick = circulo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </script>
 </body>
 </html>
